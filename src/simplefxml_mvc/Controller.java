@@ -25,41 +25,21 @@ public class Controller implements Initializable {
     @FXML private TextField nameTextField;
     
     // reference to the View's nave value
-    @FXML private Label name;
+    @FXML private Label nameValue;
     
     // the Model to modify
     private Model model;
-     
-     StringProperty sps = new SimpleStringProperty("asdf");
     
     @FXML
     private void nameTextFieldAction(ActionEvent event) {      
         model.setName(nameTextField.getText());
         System.out.println(model.getName());
-        
-         
-       sps.set(model.getName());
-    }
-    
-    public String getSps() {
-        return sps.get();
-    }
+    }   
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         model = new Model();
-        //nameValue.textProperty().bind(model.getName());
-        //model.name.addListener(
-        
-//        firstNameColumn.setCellValueFactory(
-//            cellData -> cellData.getValue().firstNameProperty());
-//        
-//         electricBill.amountDueProperty().addListener(new ChangeListener(){
-//        @Override public void changed(ObservableValue o,Object oldVal, 
-//                 Object newVal){
-//             System.out.println("Electric bill has changed!");
-//        }
-//      });
+        nameValue.textProperty().bind(model.getName());
     }    
     
 }

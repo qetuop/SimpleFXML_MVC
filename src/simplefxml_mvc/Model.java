@@ -26,8 +26,8 @@ public class Model {
         name.set(nameIn);
     }
     
-    public String getName() {
-        return name.get();
+    public StringProperty getName() {
+        return name;
     }
     
 }

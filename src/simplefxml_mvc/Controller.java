@@ -28,7 +28,7 @@ public class Controller implements Initializable {
     @FXML private Label name;
     
     // the Model to modify
-     Model model;
+    private Model model;
      
      StringProperty sps = new SimpleStringProperty("asdf");
     
@@ -37,11 +37,12 @@ public class Controller implements Initializable {
         model.setName(nameTextField.getText());
         System.out.println(model.getName());
         
-        //name.setText(model.getName());  // how to make this happen automatically?
+         
+       sps.set(model.getName());
     }
     
     public String getSps() {
-        return "foo";
+        return sps.get();
     }
     
     @Override

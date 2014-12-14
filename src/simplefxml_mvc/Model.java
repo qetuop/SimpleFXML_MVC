@@ -13,21 +13,10 @@ import javafx.beans.property.StringProperty;
  * @author Brian
  */
 public class Model {
-    private final StringProperty name = new SimpleStringProperty("");
-
-    public Model () {
-        this("");
-    }
-    public Model(String name) {
-        setName(name);
-    }
-
-    public void setName(String nameIn) {
-        name.set(nameIn);
-    }
+    //private final StringProperty name = new SimpleStringProperty("");
     
-    public StringProperty getName() {
-        return name;
-    }
-    
+    private StringProperty name = new SimpleStringProperty(this, "name", "");
+    public final String getName() { return name.get(); }
+    public final void setName(String value) { name.set(value); }
+    public final StringProperty nameProperty() { return name; }
 }

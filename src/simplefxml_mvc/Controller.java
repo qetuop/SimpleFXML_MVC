@@ -28,7 +28,7 @@ public class Controller implements Initializable {
     @FXML private Label nameValue;
     
     // the Model to modify
-    private Model model;
+    private Model model = new Model();
     
     @FXML
     private void nameTextFieldAction(ActionEvent event) {      
@@ -38,8 +38,7 @@ public class Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        model = new Model();
-        nameValue.textProperty().bind(model.getName());
+        nameValue.textProperty().bindBidirectional(model.nameProperty());
     }    
     
 }
